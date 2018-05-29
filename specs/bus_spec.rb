@@ -6,6 +6,7 @@ class BusTest < MiniTest::Test
 
   def setup
     @bus1 = Bus.new("N34", "Ocean Terminal")
+    @bus2 = Bus.new("A100", "Airport")
   end
 
   def test_get_route_number
@@ -14,6 +15,14 @@ class BusTest < MiniTest::Test
 
   def test_drive
     assert_equal("Brum brum", @bus1.drive())
+  end
+
+  def test_passenger_number__empty
+    assert_equal(0, @bus1.passenger_number())
+  end
+
+  def test_passenger_number__full
+    assert_equal(9, @bus2.passenger_number())
   end
 
 
