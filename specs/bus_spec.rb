@@ -12,7 +12,9 @@ class BusTest < MiniTest::Test
     assert_equal("N34", @bus1.route_number())
   end
 
-
+  def test_drive
+    assert_equal("Brum brum", @bus1.drive())
+  end
 
 
   # def test_correct_bus_route?
