@@ -32,11 +32,11 @@ class BusTest < MiniTest::Test
     assert_equal(1, @bus1.passenger_number())
   end
 
-
-  # def test_correct_bus_route?
-  #   assert_equal(true, @bus1.correct_bus_route())
-  # end
-
+  def test_passenger_number__one_removed
+    @bus1.pick_up(@passenger1)
+    @bus1.drop_off(@passenger1)
+    assert_equal(0, @bus1.passenger_number())
+  end
 
 
 
