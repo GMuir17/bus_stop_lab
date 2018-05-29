@@ -23,7 +23,7 @@ class BusTest < MiniTest::Test
     assert_equal("Brum brum", @bus1.drive())
   end
 
-  def test_passenger_number__empty
+  def test_passenger_number__no_passengers
     assert_equal(0, @bus1.passenger_number())
   end
 
@@ -37,6 +37,15 @@ class BusTest < MiniTest::Test
     @bus1.drop_off(@passenger1)
     assert_equal(0, @bus1.passenger_number())
   end
+
+  def test_passenger_number__empty_all_passengers
+    @bus1.pick_up(@passenger1)
+    @bus1.pick_up(@passenger2)
+    @bus1.empty_all_passengers()
+    assert_equal(0, @bus1.passenger_number())
+  end
+
+
 
 
 
